@@ -311,4 +311,5 @@ namespace ImageEdgeDetection
                     break;
             }
         }
+    }
 }
