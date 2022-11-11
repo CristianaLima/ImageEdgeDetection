@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="coord.cs" />
     <Compile Include="ExtBitmap.cs" />
     <Compile Include="ImageFilters.cs" />
     <Compile Include="MainForm.cs">

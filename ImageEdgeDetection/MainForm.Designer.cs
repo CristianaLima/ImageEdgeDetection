@@ -39,7 +39,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBoxYFilter = new System.Windows.Forms.ListBox();
             this.btnApplyFilters = new System.Windows.Forms.Button();
+            this.labelError = new System.Windows.Forms.Label();
+            this.resultBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // picPreview
@@ -109,7 +113,7 @@
             // 
             // btnRaibow
             // 
-            this.btnRaibow.Location = new System.Drawing.Point(651, 45);
+            this.btnRaibow.Location = new System.Drawing.Point(651, 70);
             this.btnRaibow.Name = "btnRaibow";
             this.btnRaibow.Size = new System.Drawing.Size(136, 43);
             this.btnRaibow.TabIndex = 21;
@@ -119,7 +123,7 @@
             // 
             // btnBlackWhite
             // 
-            this.btnBlackWhite.Location = new System.Drawing.Point(651, 128);
+            this.btnBlackWhite.Location = new System.Drawing.Point(651, 153);
             this.btnBlackWhite.Name = "btnBlackWhite";
             this.btnBlackWhite.Size = new System.Drawing.Size(136, 42);
             this.btnBlackWhite.TabIndex = 22;
@@ -130,7 +134,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(648, 207);
+            this.label1.Location = new System.Drawing.Point(648, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 23;
@@ -150,7 +154,7 @@
             "Prewitt3x3Vertical",
             "Kirsch3x3Horizontal",
             "Kirsch3x3Vertical"});
-            this.listBoxXFilter.Location = new System.Drawing.Point(651, 238);
+            this.listBoxXFilter.Location = new System.Drawing.Point(651, 274);
             this.listBoxXFilter.Name = "listBoxXFilter";
             this.listBoxXFilter.Size = new System.Drawing.Size(136, 100);
             this.listBoxXFilter.TabIndex = 24;
@@ -158,7 +162,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(648, 367);
+            this.label2.Location = new System.Drawing.Point(648, 403);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 25;
@@ -178,14 +182,14 @@
             "Prewitt3x3Vertical",
             "Kirsch3x3Horizontal",
             "Kirsch3x3Vertical"});
-            this.listBoxYFilter.Location = new System.Drawing.Point(651, 397);
+            this.listBoxYFilter.Location = new System.Drawing.Point(651, 433);
             this.listBoxYFilter.Name = "listBoxYFilter";
             this.listBoxYFilter.Size = new System.Drawing.Size(136, 100);
             this.listBoxYFilter.TabIndex = 26;
             // 
             // btnApplyFilters
             // 
-            this.btnApplyFilters.Location = new System.Drawing.Point(651, 523);
+            this.btnApplyFilters.Location = new System.Drawing.Point(651, 559);
             this.btnApplyFilters.Name = "btnApplyFilters";
             this.btnApplyFilters.Size = new System.Drawing.Size(136, 38);
             this.btnApplyFilters.TabIndex = 27;
@@ -193,10 +197,47 @@
             this.btnApplyFilters.UseVisualStyleBackColor = true;
             this.btnApplyFilters.Click += new System.EventHandler(this.btnApplyFilters_Click);
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(648, 211);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(16, 23);
+            this.labelError.TabIndex = 28;
+            this.labelError.Text = " ";
+            // 
+            // resultBox1
+            // 
+            this.resultBox1.BackColor = System.Drawing.Color.Silver;
+            this.resultBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.resultBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.resultBox1.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.resultBox1.Location = new System.Drawing.Point(840, 57);
+            this.resultBox1.Name = "resultBox1";
+            this.resultBox1.Size = new System.Drawing.Size(600, 600);
+            this.resultBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.resultBox1.TabIndex = 29;
+            this.resultBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(840, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(204, 23);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Result from X Y filters";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(826, 673);
+            this.ClientSize = new System.Drawing.Size(1465, 669);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.resultBox1);
+            this.Controls.Add(this.labelError);
             this.Controls.Add(this.btnApplyFilters);
             this.Controls.Add(this.listBoxYFilter);
             this.Controls.Add(this.label2);
@@ -215,6 +256,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Image Edge Detection";
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,6 +275,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBoxYFilter;
         private System.Windows.Forms.Button btnApplyFilters;
+        private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.PictureBox resultBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
