@@ -19,7 +19,7 @@ namespace ImageEdgeDetection
 {
     public partial class MainForm : Form
     {
-        private Bitmap originalBitmap = null;
+        //result that XYFilterForm will pick
         public static Bitmap resultBitmap = null;
 
         public MainForm()
@@ -27,8 +27,12 @@ namespace ImageEdgeDetection
             InitializeComponent();
         }
 
+        //when you click in the load image button
         private void btnOpenOriginal_Click(object sender, EventArgs e)
         {
+            //it will hide the labelError 
+            labelError.Text = " ";
+            //open your files to go pick an image
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select an image file.";
             ofd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
@@ -37,37 +41,55 @@ namespace ImageEdgeDetection
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 StreamReader streamReader = new StreamReader(ofd.FileName);
-                originalBitmap = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
+                Bitmap originalBitmap = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
                 streamReader.Close();
 
+                //show the image
                 resultBitmap = originalBitmap.CopyToSquareCanvas(picPreview.Width);
                 picPreview.Image = resultBitmap;
-                
-                
+                              
             }
         }
 
+        //when you click to the next page button
         private void btnNextPage_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            XYFilterForm xYFilterForm = new XYFilterForm();
-            xYFilterForm.ShowDialog();
-            this.Close();
+            //see if you load an image or not
+            if (resultBitmap != null)
+            {
+                //hide this window
+                this.Hide();
+                //create and open the XYFilterForm
+                XYFilterForm xYFilterForm = new XYFilterForm();
+                xYFilterForm.ShowDialog();
+                //when you close the XYFilterForm, it will close this window too
+                this.Close();
+            }
+            else
+            {
+                //show an error message
+                labelError.Text = "Load an image";
+            }
             
         }
 
         
-
+        //when you click to the raibow button
         private void btnRaibow_Click(object sender, EventArgs e)
         {
+            //do the filter in the class ImageFilters
             Bitmap bitmapImage = ImageFilters.RainbowFilter(new Bitmap(picPreview.Image));
+            //diplay the image with the filter
             picPreview.Image = bitmapImage;
             resultBitmap = bitmapImage;
         }
 
+        //when you click to the black and white button
         private void btnBlackWhite_Click(object sender, EventArgs e)
         {
+            //do the filter in the class ImageFilters
             Bitmap bitmapImage = ImageFilters.BlackWhite(new Bitmap(picPreview.Image));
+            //diplay the image with the filter
             picPreview.Image = bitmapImage;
             resultBitmap = bitmapImage;
         }

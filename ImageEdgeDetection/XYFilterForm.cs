@@ -19,62 +19,73 @@ namespace ImageEdgeDetection
         public XYFilterForm()
         {
             InitializeComponent();
+            //go search the image in the MainForm
             resultBitmap = MainForm.resultBitmap;
+            //show the image
             originalPicBox.Image = resultBitmap;
         }
 
+        //when you click on th save image button
         private void btnSaveNewImage_Click_1(object sender, EventArgs e)
         {
-            
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Title = "Specify a file name and file path";
-                sfd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
-                sfd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
+            //open yours files to save your image where you want
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Specify a file name and file path";
+            sfd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
+            sfd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
 
-                if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string fileExtension = Path.GetExtension(sfd.FileName).ToUpper();
+                ImageFormat imgFormat = ImageFormat.Png;
+
+                if (fileExtension == "BMP")
                 {
-                    string fileExtension = Path.GetExtension(sfd.FileName).ToUpper();
-                    ImageFormat imgFormat = ImageFormat.Png;
+                    imgFormat = ImageFormat.Bmp;
+                }
+                else if (fileExtension == "JPG")
+                {
+                    imgFormat = ImageFormat.Jpeg;
+                }
 
-                    if (fileExtension == "BMP")
-                    {
-                        imgFormat = ImageFormat.Bmp;
-                    }
-                    else if (fileExtension == "JPG")
-                    {
-                        imgFormat = ImageFormat.Jpeg;
-                    }
+                StreamWriter streamWriter = new StreamWriter(sfd.FileName, false);
+                resultBitmap.Save(streamWriter.BaseStream, imgFormat);
+                streamWriter.Flush();
+                streamWriter.Close();
 
-                    StreamWriter streamWriter = new StreamWriter(sfd.FileName, false);
-                    resultBitmap.Save(streamWriter.BaseStream, imgFormat);
-                    streamWriter.Flush();
-                    streamWriter.Close();
-
-                    
-                
             }
         }
 
+        //when you click on apply X Y filters button
         private void btnApplyFilters_Click_1(object sender, EventArgs e)
         {
+            //it hide the label error
             labelError.Text = " ";
+            //see if you choose two filters
             if (xFilterBox.SelectedIndex != -1 && yFilterBox.SelectedIndex != -1)
             {
+                //apply the filters
                 filter(xFilterBox.SelectedIndex, yFilterBox.SelectedIndex);
             }
             else
             {
+                //show an error message
                 labelError.Text = "2 filters must be selected";
             }
         }
+
+        //that's apply X Y filters
         public void filter(int xfilter, int yfilter)
         {
+            //pick all the matrix from the class Matrix
             List<double[,]> allMatrix = Matrix.AllMatrix;
             double[,] xFilterMatrix;
             double[,] yFilterMatrix;
+            //put the right matrix to the right x y filter
             xFilterMatrix = allMatrix[xfilter];
             yFilterMatrix = allMatrix[yfilter];
 
+            //do the filter
             Bitmap newbitmap = new Bitmap(originalPicBox.Image);
             BitmapData newbitmapData = new BitmapData();
             newbitmapData = newbitmap.LockBits(new Rectangle(0, 0, newbitmap.Width, newbitmap.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppPArgb);
@@ -102,6 +113,7 @@ namespace ImageEdgeDetection
 
             int byteOffset = 0;
 
+            //do the calcuéation to put the right color
             for (int offsetY = filterOffset; offsetY <
                 newbitmap.Height - filterOffset; offsetY++)
             {
@@ -156,7 +168,7 @@ namespace ImageEdgeDetection
                     greenTotal = Math.Sqrt((greenX * greenX) + (greenY * greenY));
                     redTotal = Math.Sqrt((redX * redX) + (redY * redY));
                         
-
+                    //ajust the colors to be between 0 and 255
                     if (blueTotal > 255)
                     { blueTotal = 255; }
                     else if (blueTotal < 0)
@@ -189,6 +201,7 @@ namespace ImageEdgeDetection
 
             Marshal.Copy(resultbuff, 0, resultData.Scan0, resultbuff.Length);
             resultbitmap.UnlockBits(resultData);
+            //show the result
             resultPicBox.Image = resultbitmap;
             resultBitmap = resultbitmap;
             

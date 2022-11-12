@@ -33,6 +33,7 @@
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnRaibow = new System.Windows.Forms.Button();
             this.btnBlackWhite = new System.Windows.Forms.Button();
+            this.labelError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,10 +92,22 @@
             this.btnBlackWhite.UseVisualStyleBackColor = true;
             this.btnBlackWhite.Click += new System.EventHandler(this.btnBlackWhite_Click);
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(647, 230);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(16, 23);
+            this.labelError.TabIndex = 35;
+            this.labelError.Text = " ";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(823, 670);
+            this.Controls.Add(this.labelError);
             this.Controls.Add(this.btnBlackWhite);
             this.Controls.Add(this.btnRaibow);
             this.Controls.Add(this.btnNextPage);
@@ -108,6 +121,7 @@
             this.Text = "Image Edge Detection";
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,6 +132,7 @@
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnRaibow;
         private System.Windows.Forms.Button btnBlackWhite;
+        private System.Windows.Forms.Label labelError;
     }
 }
 
