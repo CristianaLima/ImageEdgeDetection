@@ -63,9 +63,9 @@ namespace UnitTestProject1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Laplacian3x3_Image {
+        internal static System.Drawing.Bitmap ImageOriginal {
             get {
-                object obj = ResourceManager.GetObject("Laplacian3x3_Image", resourceCulture);
+                object obj = ResourceManager.GetObject("ImageOriginal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace UnitTestProject1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap originalImage {
+        internal static System.Drawing.Bitmap Laplacian3x3_Image {
             get {
-                object obj = ResourceManager.GetObject("originalImage", resourceCulture);
+                object obj = ResourceManager.GetObject("Laplacian3x3_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
