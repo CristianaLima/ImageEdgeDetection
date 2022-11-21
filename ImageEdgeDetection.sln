@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageEdgeDetection", "ImageEdgeDetection\ImageEdgeDetection.csproj", "{7DBEE0D3-2DBD-4E8A-BA07-BDB1C95EB366}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{5071AF90-AD89-436E-968D-BB6266F008A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{B64CDDAD-8D99-4603-86BB-64AC6F5EF427}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +21,14 @@ Global
 		{7DBEE0D3-2DBD-4E8A-BA07-BDB1C95EB366}.Release|Any CPU.ActiveCfg = Release|x86
 		{7DBEE0D3-2DBD-4E8A-BA07-BDB1C95EB366}.Release|x86.ActiveCfg = Release|x86
 		{7DBEE0D3-2DBD-4E8A-BA07-BDB1C95EB366}.Release|x86.Build.0 = Release|x86
-		{5071AF90-AD89-436E-968D-BB6266F008A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5071AF90-AD89-436E-968D-BB6266F008A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5071AF90-AD89-436E-968D-BB6266F008A7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5071AF90-AD89-436E-968D-BB6266F008A7}.Debug|x86.Build.0 = Debug|Any CPU
-		{5071AF90-AD89-436E-968D-BB6266F008A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5071AF90-AD89-436E-968D-BB6266F008A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5071AF90-AD89-436E-968D-BB6266F008A7}.Release|x86.ActiveCfg = Release|Any CPU
-		{5071AF90-AD89-436E-968D-BB6266F008A7}.Release|x86.Build.0 = Release|Any CPU
+		{B64CDDAD-8D99-4603-86BB-64AC6F5EF427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B64CDDAD-8D99-4603-86BB-64AC6F5EF427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B64CDDAD-8D99-4603-86BB-64AC6F5EF427}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B64CDDAD-8D99-4603-86BB-64AC6F5EF427}.Debug|x86.Build.0 = Debug|Any CPU
+		{B64CDDAD-8D99-4603-86BB-64AC6F5EF427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B64CDDAD-8D99-4603-86BB-64AC6F5EF427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B64CDDAD-8D99-4603-86BB-64AC6F5EF427}.Release|x86.ActiveCfg = Release|Any CPU
+		{B64CDDAD-8D99-4603-86BB-64AC6F5EF427}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ImageEdgeDetection.Properties {
+namespace UnitTestProject1.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ImageEdgeDetection.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ImageEdgeDetection.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UnitTestProject1.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,36 @@ namespace ImageEdgeDetection.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Laplacian3x3_Image {
+            get {
+                object obj = ResourceManager.GetObject("Laplacian3x3_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap originalImage {
+            get {
+                object obj = ResourceManager.GetObject("originalImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sobel3x3Vertical_Kirsh3x3Horizontal_Image {
+            get {
+                object obj = ResourceManager.GetObject("Sobel3x3Vertical_Kirsh3x3Horizontal_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
