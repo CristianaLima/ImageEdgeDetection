@@ -8,7 +8,7 @@ using UnitTestProject1.Properties;
 namespace UnitTestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class FilterXYTest
     {
         FilterXY xYFilterForm = new FilterXY();
 
@@ -37,7 +37,6 @@ namespace UnitTestProject1
 
             Bitmap result = xYFilterForm.filter(0, 0, original);
 
-            
             Assert.IsTrue(CompareBitmapPixels(compare, result));
 
         }

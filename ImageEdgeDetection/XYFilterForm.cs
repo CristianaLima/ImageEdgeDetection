@@ -78,6 +78,9 @@ namespace ImageEdgeDetection
             }
         }
 
-        
+        private void xFilterBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

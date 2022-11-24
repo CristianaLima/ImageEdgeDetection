@@ -51,12 +51,13 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageFiltersTest.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="FilterXYTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,18 +70,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sobel3x3Vertical_kirsh3x3Horizontal_Image.png" />
-    <None Include="Resources\Laplacian3x3_Laplacian3x3_Image.png" />
-    <None Include="Resources\originalImage.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ImageEdgeDetection\ImageEdgeDetection.csproj">
       <Project>{7dbee0d3-2dbd-4e8a-ba07-bdb1c95eb366}</Project>
       <Name>ImageEdgeDetection</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Laplacian3x3_Image.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sobel3x3Vertical_Kirsh3x3Horizontal_Image.bmp" />
@@ -90,6 +83,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ImageOriginal.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rainbow_Image.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlackWhite_Image.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcelona_blackWhite.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcelona_rainbow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcelona.bmp" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
