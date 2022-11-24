@@ -136,6 +136,9 @@
   <data name="Laplacian3x3_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Laplacian3x3_Image.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Laplacian5x5_Prewitt3x3Horizontal_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Laplacian5x5_Prewitt3x3Horizontal_Image.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Rainbow_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rainbow_Image.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

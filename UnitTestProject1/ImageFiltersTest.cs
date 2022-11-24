@@ -36,7 +36,15 @@ namespace UnitTestProject1
             CompareBitmapPixels(resultImage, filteredRainbowImage);
         }
 
-        
+        //Test if the Rainbow filter returns null if it gets Bitmap=null
+        [TestMethod]
+        public void TestFilterRainbowNull()
+        {
+            Bitmap resultImage = ImageFilters.RainbowFilter(null);
+            Assert.IsNull(resultImage);
+        }
+
+
         //Test if the BlackWhite image filter works
         [TestMethod]
         public void TestFilterBlackWhite()
@@ -47,6 +55,14 @@ namespace UnitTestProject1
             Bitmap resultImage = ImageFilters.BlackWhite(sourceImage);
 
             CompareBitmapPixels(resultImage, filteredBlackWhiteImage);
+        }
+
+        //Test if the BlackWhite filter returns null if it gets Bitmap=null
+        [TestMethod]
+        public void TestFilterBlackWhiteNull()
+        {
+            Bitmap resultImage = ImageFilters.BlackWhite(null);
+            Assert.IsNull(resultImage);
         }
 
     }

@@ -14,6 +14,11 @@ namespace ImageEdgeDetection
         public FilterXY() { }
         public Bitmap filter(int xfilter, int yfilter, Bitmap originalPic)
         {
+            if (xfilter == -1 || yfilter == -1)
+                return originalPic;
+            if (originalPic == null)
+                return null;
+
             //pick all the matrix from the class Matrix
             List<double[,]> allMatrix = Matrix.AllMatrix;
             double[,] xFilterMatrix;
@@ -21,7 +26,7 @@ namespace ImageEdgeDetection
             //put the right matrix to the right x y filter
             xFilterMatrix = allMatrix[xfilter];
             yFilterMatrix = allMatrix[yfilter];
-
+           
             //do the filter
             Bitmap newbitmap = new Bitmap(originalPic);
             BitmapData newbitmapData = new BitmapData();
@@ -140,6 +145,7 @@ namespace ImageEdgeDetection
             resultbitmap.UnlockBits(resultData);
             //return the result
             return resultbitmap;
+            
 
         }
     }

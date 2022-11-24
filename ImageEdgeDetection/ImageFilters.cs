@@ -11,6 +11,8 @@ namespace ImageEdgeDetection
         //Rainbow filter
         public static Bitmap RainbowFilter(Bitmap bmp)
         {
+            if (bmp == null)
+                return null;
             
             Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
             int raz = bmp.Height / 4;
@@ -48,6 +50,9 @@ namespace ImageEdgeDetection
         //black and white filter
         public static Bitmap BlackWhite(Bitmap Bmp)
         {
+            if (Bmp == null)
+                return null;
+
             int rgb;
             Color c;
 

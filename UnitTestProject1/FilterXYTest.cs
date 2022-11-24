@@ -43,7 +43,7 @@ namespace UnitTestProject1
 
         }
 
-        //Test if the x Sobel3x3Vertical filter and the y Kirsh3x3Horizonta filter works
+        //Test if the x Sobel3x3Vertical filter and the y Kirsh3x3Horizontal filter works
         [TestMethod]
         public void TestFilterSobel3x3VerticalKirsh3x3Horizontal()
         {
@@ -56,7 +56,53 @@ namespace UnitTestProject1
             Assert.IsTrue(CompareBitmapPixels(compare, result));
 
         }
-        
+
+        //Test if the x Laplacian5x5 filter and the y Prewitt3x3Horizontal filter works
+        [TestMethod]
+        public void TestFilterLaplacian5x5Prewitt3x3Horizontal()
+        {
+
+            Bitmap original = Resources.ImageOriginal;
+            Bitmap compare = Resources.Laplacian5x5_Prewitt3x3Horizontal_Image;
+
+            Bitmap result = xYFilterForm.filter(1, 4, original);
+
+            Assert.IsTrue(CompareBitmapPixels(compare, result));
+
+        }
+
+        //Test if the filter returns null if it gets Bitmap=null
+        [TestMethod]
+        public void TestImageNull()
+        {
+            Bitmap resultImage = xYFilterForm.filter(0, 0, null);
+            Assert.IsNull(resultImage);
+        }
+
+        //Test if the filter uses Laplacian3x3 if it gets X=-1
+        [TestMethod]
+        public void TestXNull()
+        {
+            Bitmap original = Resources.ImageOriginal;
+            Bitmap compare = Resources.Laplacian3x3_Image;
+
+            Bitmap result = xYFilterForm.filter(-1, 0, original);
+
+            Assert.IsFalse(CompareBitmapPixels(compare, result));
+        }
+
+        //Test if the filter uses Laplacian3x3 if it gets Y=-1
+        [TestMethod]
+        public void TestYNull()
+        {
+            Bitmap original = Resources.ImageOriginal;
+            Bitmap compare = Resources.Laplacian3x3_Image;
+
+            Bitmap result = xYFilterForm.filter(0, -1, original);
+
+            Assert.IsFalse(CompareBitmapPixels(compare, result));
+        }
+
 
     }
 }
