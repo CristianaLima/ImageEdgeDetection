@@ -12,6 +12,7 @@ namespace UnitTestProject1
     {
         FilterXY xYFilterForm = new FilterXY();
 
+        //Method to test if two Bitmaps are identical by each pixel
         public Boolean CompareBitmapPixels(Bitmap resultImage, Bitmap filteredImage)
         {
             if (resultImage.Size != filteredImage.Size)
@@ -28,6 +29,7 @@ namespace UnitTestProject1
             return true;
         }
 
+        //Test if the x Laplacian3x3 filter and the y Laplacian3x3 filter works
         [TestMethod]
         public void TestFilterLaplacian3x3()
         {
@@ -41,6 +43,7 @@ namespace UnitTestProject1
 
         }
 
+        //Test if the x Sobel3x3Vertical filter and the y Kirsh3x3Horizonta filter works
         [TestMethod]
         public void TestFilterSobel3x3VerticalKirsh3x3Horizontal()
         {
