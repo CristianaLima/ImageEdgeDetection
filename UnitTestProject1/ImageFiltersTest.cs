@@ -11,17 +11,20 @@ namespace UnitTestProject1
     public class ImageFiltersTest
     {
         //Method to test if two Bitmaps are identical by each pixel
-        public void CompareBitmapPixels(Bitmap resultImage, Bitmap filteredImage)
+        public Boolean CompareBitmapPixels(Bitmap resultImage, Bitmap filteredImage)
         {
-            Assert.AreEqual(resultImage.Size, filteredImage.Size);
+            if (resultImage.Size != filteredImage.Size)
+                return false;
 
             for (int y = 0; y < resultImage.Height - 1; y++)
             {
                 for (int x = 0; x < resultImage.Width - 1; x++)
                 {
-                    Assert.AreEqual(resultImage.GetPixel(x, y), filteredImage.GetPixel(x, y));
+                    if (resultImage.GetPixel(x, y) != filteredImage.GetPixel(x, y))
+                        return false;
                 }
             }
+            return true;
         }
 
         //Test if the rainbow image filter works
@@ -33,7 +36,7 @@ namespace UnitTestProject1
             Bitmap sourceImage = new Bitmap(Properties.Resources.barcelona);
             Bitmap resultImage = ImageFilters.RainbowFilter(sourceImage);
 
-            CompareBitmapPixels(resultImage, filteredRainbowImage);
+            Assert.IsTrue( CompareBitmapPixels(resultImage, filteredRainbowImage));
         }
 
         //Test if the Rainbow filter returns null if it gets Bitmap=null
@@ -54,7 +57,7 @@ namespace UnitTestProject1
             Bitmap sourceImage = new Bitmap(Properties.Resources.barcelona);
             Bitmap resultImage = ImageFilters.BlackWhite(sourceImage);
 
-            CompareBitmapPixels(resultImage, filteredBlackWhiteImage);
+            Assert.IsTrue(CompareBitmapPixels(resultImage, filteredBlackWhiteImage));
         }
 
         //Test if the BlackWhite filter returns null if it gets Bitmap=null
