@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ImageEdgeDetection
 {
-    public class FilterXY
+    public class FilterXY : IFilterXY
     {
         public FilterXY() { }
         public Bitmap filter(int xfilter, int yfilter, Bitmap originalPic)
@@ -26,7 +26,7 @@ namespace ImageEdgeDetection
             //put the right matrix to the right x y filter
             xFilterMatrix = allMatrix[xfilter];
             yFilterMatrix = allMatrix[yfilter];
-           
+
             //do the filter
             Bitmap newbitmap = new Bitmap(originalPic);
             BitmapData newbitmapData = new BitmapData();
@@ -55,7 +55,7 @@ namespace ImageEdgeDetection
 
             int byteOffset = 0;
 
-            //do the calcuéation to put the right color
+            //do the calculation to put the right color
             for (int offsetY = filterOffset; offsetY <
                 newbitmap.Height - filterOffset; offsetY++)
             {
@@ -145,7 +145,7 @@ namespace ImageEdgeDetection
             resultbitmap.UnlockBits(resultData);
             //return the result
             return resultbitmap;
-            
+
 
         }
     }

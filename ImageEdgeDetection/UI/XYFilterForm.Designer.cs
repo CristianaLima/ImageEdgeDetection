@@ -145,14 +145,9 @@ namespace ImageEdgeDetection
             this.xFilterBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.xFilterBox.FormattingEnabled = true;
             this.xFilterBox.Items.AddRange(new object[] {
-            "Laplacian3x3",
             "Laplacian5x5",
             "Sobel3x3Horizontal",
-            "Sobel3x3Vertical",
-            "Prewitt3x3Horizontal",
-            "Prewitt3x3Vertical",
-            "Kirsch3x3Horizontal",
-            "Kirsch3x3Vertical"});
+            "Prewitt3x3Vertical"});
             this.xFilterBox.Location = new System.Drawing.Point(661, 291);
             this.xFilterBox.Name = "xFilterBox";
             this.xFilterBox.Size = new System.Drawing.Size(137, 24);
@@ -164,14 +159,9 @@ namespace ImageEdgeDetection
             this.yFilterBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.yFilterBox.FormattingEnabled = true;
             this.yFilterBox.Items.AddRange(new object[] {
-            "Laplacian3x3",
             "Laplacian5x5",
             "Sobel3x3Horizontal",
-            "Sobel3x3Vertical",
-            "Prewitt3x3Horizontal",
-            "Prewitt3x3Vertical",
-            "Kirsch3x3Horizontal",
-            "Kirsch3x3Vertical"});
+            "Prewitt3x3Vertical"});
             this.yFilterBox.Location = new System.Drawing.Point(662, 451);
             this.yFilterBox.Name = "yFilterBox";
             this.yFilterBox.Size = new System.Drawing.Size(137, 24);

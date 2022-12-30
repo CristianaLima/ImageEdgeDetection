@@ -34,6 +34,7 @@
             this.btnRaibow = new System.Windows.Forms.Button();
             this.btnBlackWhite = new System.Windows.Forms.Button();
             this.labelError = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,10 +104,21 @@
             this.labelError.TabIndex = 35;
             this.labelError.Text = " ";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(651, 223);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 43);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Miami Filter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnMiami_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(823, 670);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.btnBlackWhite);
             this.Controls.Add(this.btnRaibow);
@@ -133,6 +145,7 @@
         private System.Windows.Forms.Button btnRaibow;
         private System.Windows.Forms.Button btnBlackWhite;
         private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.Button button1;
     }
 }
 

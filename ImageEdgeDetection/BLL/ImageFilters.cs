@@ -6,14 +6,15 @@ using System.Drawing;
 
 namespace ImageEdgeDetection
 {
-    public class ImageFilters
+    public class ImageFilters : IImageFilters
     {
+       
         //Rainbow filter
-        public static Bitmap RainbowFilter(Bitmap bmp)
+        public Bitmap RainbowFilter(Bitmap bmp)
         {
             if (bmp == null)
                 return null;
-            
+
             Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
             int raz = bmp.Height / 4;
             for (int i = 0; i < bmp.Width; i++)
@@ -48,7 +49,7 @@ namespace ImageEdgeDetection
         }
 
         //black and white filter
-        public static Bitmap BlackWhite(Bitmap Bmp)
+        public Bitmap BlackWhite(Bitmap Bmp)
         {
             if (Bmp == null)
                 return null;
@@ -65,6 +66,26 @@ namespace ImageEdgeDetection
                 }
             return Bmp;
 
+        }
+
+        //Miami Filter
+        public Bitmap MiamiFilter(Bitmap bmp, int alpha, int red, int blue, int green)
+        {
+
+            Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
+
+
+            for (int i = 0; i < bmp.Width; i++)
+            {
+                for (int x = 0; x < bmp.Height; x++)
+                {
+                    Color c = bmp.GetPixel(i, x);
+                    Color cLayer = Color.FromArgb(c.A / alpha, c.R / red, c.G / green, c.B / blue);
+                    temp.SetPixel(i, x, cLayer);
+                }
+
+            }
+            return temp;
         }
     }
 }

@@ -14,11 +14,32 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using ImageEdgeDetection.BLL;
 
 namespace ImageEdgeDetection
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// ImageFilter interface
+        /// </summary>
+        private IImageFilters imageFilter = new ImageFilters();
+
+        /// <summary>
+        /// EdgeDetection interface
+        /// </summary>
+        private IFilterXY filterXY = new FilterXY();
+
+        /// <summary>
+        /// DataAccess interface from BLL
+        /// </summary>
+        private IAccessData dataAccess = new AccessData();
+
+        /// <summary>
+        /// Image in the picture box without any filter applied
+        /// </summary>
+        private Image origin;
+
         //result that XYFilterForm will pick
         public static Bitmap resultBitmap = null;
 
@@ -74,27 +95,36 @@ namespace ImageEdgeDetection
         }
 
         
-        //when you click to the raibow button
+        //when you click the raibow button
         private void btnRaibow_Click(object sender, EventArgs e)
         {
             //do the filter in the class ImageFilters
-            Bitmap bitmapImage = ImageFilters.RainbowFilter(new Bitmap(picPreview.Image));
+            Bitmap bitmapImage = imageFilter.RainbowFilter(new Bitmap(picPreview.Image));
             //diplay the image with the filter
             picPreview.Image = bitmapImage;
             resultBitmap = bitmapImage;
         }
 
-        //when you click to the black and white button
+        //when you click the black and white button
         private void btnBlackWhite_Click(object sender, EventArgs e)
         {
             //do the filter in the class ImageFilters
-            Bitmap bitmapImage = ImageFilters.BlackWhite(new Bitmap(picPreview.Image));
+            Bitmap bitmapImage = imageFilter.BlackWhite(new Bitmap(picPreview.Image));
             //diplay the image with the filter
             picPreview.Image = bitmapImage;
             resultBitmap = bitmapImage;
         }
 
-        
+        //when you click the miami button
+        private void btnMiami_Click(object sender, EventArgs e)
+        {
+            //do the filter in the class ImageFilters
+            Bitmap bitmapImage = imageFilter.MiamiFilter(new Bitmap(picPreview.Image), 1,1,10,1);
+            //diplay the image with the filter
+            picPreview.Image = bitmapImage;
+            resultBitmap = bitmapImage;
+
+        }
     }
 }
 
