@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompareBitmap.cs" />
+    <Compile Include="ExtBitmapTest.cs" />
     <Compile Include="ImageFiltersTest.cs" />
     <Compile Include="InputOutputTest.cs" />
     <Compile Include="FilterXYTest.cs" />
@@ -102,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\barcelona_miami.bmp" />
+    <None Include="Resources\widtherImage.png" />
     <Content Include="Resources\Laplacian5x5.bmp" />
     <Content Include="Resources\Prewitt3x3.bmp" />
     <Content Include="Resources\Sobel3x3.bmp" />

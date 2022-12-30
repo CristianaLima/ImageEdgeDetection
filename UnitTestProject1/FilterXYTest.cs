@@ -31,24 +31,7 @@ namespace UnitTestProject1
         /// </summary>
         private Bitmap original = Properties.Resources.ImageOriginal;
 
-     //   FilterXY xYFilterForm = new FilterXY();
 
-        //Method to test if two Bitmaps are identical by each pixel
-        public Boolean CompareBitmapPixels(Bitmap resultImage, Bitmap filteredImage)
-        {
-            if (resultImage.Size != filteredImage.Size)
-                return false;
-
-            for (int y = 0; y < resultImage.Height - 1; y++)
-            {
-                for (int x = 0; x < resultImage.Width - 1; x++)
-                {
-                    if (resultImage.GetPixel(x, y) != filteredImage.GetPixel(x, y))
-                        return false;
-                }
-            }
-            return true;
-        }
 
         //Test if the x Laplacian3x3 filter and the y Laplacian3x3 filter works
         [TestMethod]
@@ -57,9 +40,9 @@ namespace UnitTestProject1
 
             Bitmap compare = Properties.Resources.Laplacian5x5;
 
-            filterXY.filter(1, 1, original).Returns(compare);
+            filterXY.filter(0, 0, original).Returns(compare);
 
-            Bitmap result = filterXY.filter(1, 1, original);
+            Bitmap result = filterXY.filter(0, 0, original);
 
             comparatorBitmap.CompareBitmapPixels(compare, result);
 
@@ -72,9 +55,9 @@ namespace UnitTestProject1
 
             Bitmap compare = Properties.Resources.Prewitt3x3;
 
-            filterXY.filter(2, 2, original).Returns(compare);
+            filterXY.filter(1, 1, original).Returns(compare);
 
-            Bitmap result = filterXY.filter(2, 2, original);
+            Bitmap result = filterXY.filter(1, 1, original);
 
             comparatorBitmap.CompareBitmapPixels(compare, result);
 
@@ -87,9 +70,7 @@ namespace UnitTestProject1
 
             Bitmap compare = Properties.Resources.Sobel3x3;
 
-            filterXY.filter(3, 3, original).Returns(compare);
-
-            Bitmap result = filterXY.filter(3, 3, original);
+            Bitmap result = filterXYClass.filter(2, 2, original);
 
             comparatorBitmap.CompareBitmapPixels(compare, result);
 
@@ -100,7 +81,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestImageNull()
         {
-            Bitmap resultImage = filterXY.filter(0, 0, null);
+            Bitmap resultImage = filterXYClass.filter(0, 0, null);
             Assert.IsNull(resultImage);
         }
 
@@ -110,9 +91,10 @@ namespace UnitTestProject1
         {
             Bitmap compare = Properties.Resources.Laplacian5x5;
 
-            Bitmap result = filterXY.filter(-1, 0, original);
+            Bitmap result = filterXYClass.filter(-1, 0, original);
 
-            Assert.IsFalse(CompareBitmapPixels(compare, result));
+
+            Assert.IsFalse(comparatorBitmap.CompareBitmapPixels(compare, result));
         }
 
         //Test if the filter uses Laplacian5x5 if it gets Y=-1
@@ -122,9 +104,9 @@ namespace UnitTestProject1
             
             Bitmap compare = Properties.Resources.Laplacian5x5;
 
-            Bitmap result = filterXY.filter(0, -1, original);
+            Bitmap result = filterXYClass.filter(0, -1, original);
 
-            Assert.IsFalse(CompareBitmapPixels(compare, result));
+            Assert.IsFalse(comparatorBitmap.CompareBitmapPixels(compare, result));
         }
 
     }

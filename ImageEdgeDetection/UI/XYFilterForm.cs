@@ -65,7 +65,6 @@ namespace ImageEdgeDetection
             //see if you choose two filters
             if (xFilterBox.SelectedIndex != -1 && yFilterBox.SelectedIndex != -1)
             {
-                labelError.Text = xFilterBox.SelectedIndex.ToString();
                 //apply the filters
                 resultBitmap= filterXY.filter(xFilterBox.SelectedIndex, yFilterBox.SelectedIndex, (Bitmap) originalPicBox.Image);
 
@@ -78,10 +77,5 @@ namespace ImageEdgeDetection
             }
         }
 
-        private void xFilterBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            
-        }
     }
 }

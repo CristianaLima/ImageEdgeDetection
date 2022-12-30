@@ -67,6 +67,7 @@ namespace ImageEdgeDetection
 
                 //show the image
                 resultBitmap = originalBitmap.CopyToSquareCanvas(picPreview.Width);
+                origin = originalBitmap.CopyToSquareCanvas(picPreview.Width);
                 picPreview.Image = resultBitmap;
                               
             }
