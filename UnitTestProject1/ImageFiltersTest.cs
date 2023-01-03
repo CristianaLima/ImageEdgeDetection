@@ -1,4 +1,4 @@
-﻿using ImageEdgeDetection;
+﻿using ImageEdgeDetection.BLL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using System;
@@ -43,6 +43,14 @@ namespace UnitTestProject1
             Bitmap resultImage = imageFilterClass.MiamiFilter(sourceImage, 1, 1, 10, 1);
 
             comparatorBitmap.CompareBitmapPixels(imageFilter.MiamiFilter(sourceImage, 1, 1, 10, 1), resultImage);
+        }
+
+        //Test if the Miami filter returns null if it gets Bitmap=null
+        [TestMethod]
+        public void TestFilterMiamiNull()
+        {
+            Bitmap resultImage = imageFilterClass.MiamiFilter(null, 1, 1, 10, 1);
+            Assert.IsNull(resultImage);
         }
 
         //Test if the rainbow image filter works

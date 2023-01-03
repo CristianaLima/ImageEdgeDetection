@@ -1,8 +1,14 @@
 ﻿
+using ImageEdgeDetection.BLL;
+
 namespace ImageEdgeDetection
 {
+
+
     partial class XYFilterForm
     {
+
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -56,6 +62,7 @@ namespace ImageEdgeDetection
             this.originalPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.originalPicBox.TabIndex = 0;
             this.originalPicBox.TabStop = false;
+            this.originalPicBox.Click += new System.EventHandler(this.originalPicBox_Click);
             // 
             // resultPicBox
             // 

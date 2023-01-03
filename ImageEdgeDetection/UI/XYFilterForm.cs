@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using ImageEdgeDetection.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +16,19 @@ namespace ImageEdgeDetection
 {
     public partial class XYFilterForm : Form
     {
-        FilterXY filterXY = new FilterXY();
+        /// <summary>
+        /// EdgeDetection interface
+        /// </summary>
+        private IFilterXY filterXY = new FilterXY();
 
-        private Bitmap resultBitmap = null;
+        /// DataAccess interface from BLL
+        /// </summary>
+        private IAccessData dataAccess = new AccessData();
+
+        //result that XYFilterForm will pick
+        public static Bitmap resultBitmap = null;
+
+     
         public XYFilterForm()
         {
             InitializeComponent();
@@ -78,6 +90,11 @@ namespace ImageEdgeDetection
         }
 
         private void xFilterBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void originalPicBox_Click(object sender, EventArgs e)
         {
 
         }

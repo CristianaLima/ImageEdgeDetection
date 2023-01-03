@@ -136,11 +136,29 @@
   <data name="Laplacian5x5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\laplacian5x5.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LaplacianPrewitt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LaplacianPrewitt.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LaplacianSobel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LaplacianSobel.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Prewitt3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\prewitt3x3.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PrewittLaplacian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PrewittLaplacian.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PrewittSobel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PrewittSobel.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Sobel3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\sobel3x3.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SobelLaplacian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SobelLaplacian.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SobelPrewitt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SobelPrewitt.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="widtherImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\widtherImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

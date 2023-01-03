@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ImageEdgeDetection
+namespace ImageEdgeDetection.BLL
 {
     public class FilterXY : IFilterXY
     {
-        public FilterXY() { }
+    
         public Bitmap filter(int xfilter, int yfilter, Bitmap originalPic)
         {
             if (xfilter == -1 || yfilter == -1)

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ImageEdgeDetection
+namespace ImageEdgeDetection.BLL
 {
     public static class Matrix
     {

@@ -26,11 +26,6 @@ namespace ImageEdgeDetection
         private IImageFilters imageFilter = new ImageFilters();
 
         /// <summary>
-        /// EdgeDetection interface
-        /// </summary>
-        private IFilterXY filterXY = new FilterXY();
-
-        /// <summary>
         /// DataAccess interface from BLL
         /// </summary>
         private IAccessData dataAccess = new AccessData();
@@ -124,6 +119,11 @@ namespace ImageEdgeDetection
             //diplay the image with the filter
             picPreview.Image = bitmapImage;
             resultBitmap = bitmapImage;
+
+        }
+
+        private void picPreview_Click(object sender, EventArgs e)
+        {
 
         }
     }

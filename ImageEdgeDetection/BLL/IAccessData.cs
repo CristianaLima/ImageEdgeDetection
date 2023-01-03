@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace ImageEdgeDetection
+namespace ImageEdgeDetection.BLL
 {
     //Interface for the AccessData class
     public interface IAccessData

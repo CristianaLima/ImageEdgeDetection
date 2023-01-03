@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace ImageEdgeDetection
+namespace ImageEdgeDetection.BLL
 {
     public class ImageFilters : IImageFilters
     {
@@ -67,6 +67,8 @@ namespace ImageEdgeDetection
         //Miami Filter
         public Bitmap MiamiFilter(Bitmap bmp, int alpha, int red, int blue, int green)
         {
+            if (bmp == null)
+                return null;
 
             Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
 

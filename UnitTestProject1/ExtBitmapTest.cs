@@ -1,4 +1,4 @@
-﻿using ImageEdgeDetection;
+﻿using ImageEdgeDetection.BLL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;

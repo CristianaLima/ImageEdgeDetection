@@ -50,6 +50,7 @@
             this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPreview.TabIndex = 13;
             this.picPreview.TabStop = false;
+            this.picPreview.Click += new System.EventHandler(this.picPreview_Click);
             // 
             // btnOpenOriginal
             // 
@@ -104,7 +105,7 @@
             this.labelError.TabIndex = 35;
             this.labelError.Text = " ";
             // 
-            // btnMiami
+            // button1
             // 
             this.button1.Location = new System.Drawing.Point(651, 223);
             this.button1.Name = "button1";

@@ -103,12 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\barcelona_miami.bmp" />
-    <Content Include="Resources\LaplacianPrewitt.bmp" />
-    <Content Include="Resources\LaplacianSobel.bmp" />
-    <Content Include="Resources\PrewittLaplacian.bmp" />
-    <Content Include="Resources\PrewittSobel.bmp" />
-    <Content Include="Resources\SobelLaplacian.bmp" />
-    <Content Include="Resources\SobelPrewitt.bmp" />
     <None Include="Resources\widtherImage.png" />
     <Content Include="Resources\Laplacian5x5.bmp" />
     <Content Include="Resources\Prewitt3x3.bmp" />

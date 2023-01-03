@@ -12,7 +12,7 @@ using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
 
-namespace ImageEdgeDetection
+namespace ImageEdgeDetection.BLL
 {
     public static class ExtBitmap
     {
