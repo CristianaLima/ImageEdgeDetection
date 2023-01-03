@@ -19,15 +19,15 @@ namespace ImageEdgeDetection
             if (originalPic == null)
                 return null;
 
-            //pick all the matrix from the class Matrix
+            //pick all the matrices from the Matrix class
             List<double[,]> allMatrix = Matrix.AllMatrix;
             double[,] xFilterMatrix;
             double[,] yFilterMatrix;
-            //put the right matrix to the right x y filter
+            //put the right matrix to the right x and y filter
             xFilterMatrix = allMatrix[xfilter];
             yFilterMatrix = allMatrix[yfilter];
 
-            //do the filter
+            //applies the filter
             Bitmap newbitmap = new Bitmap(originalPic);
             BitmapData newbitmapData = new BitmapData();
             newbitmapData = newbitmap.LockBits(new Rectangle(0, 0, newbitmap.Width, newbitmap.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppPArgb);
@@ -55,7 +55,7 @@ namespace ImageEdgeDetection
 
             int byteOffset = 0;
 
-            //do the calculation to put the right color
+            //does the calculation to put the right color
             for (int offsetY = filterOffset; offsetY <
                 newbitmap.Height - filterOffset; offsetY++)
             {
@@ -110,7 +110,7 @@ namespace ImageEdgeDetection
                     greenTotal = Math.Sqrt((greenX * greenX) + (greenY * greenY));
                     redTotal = Math.Sqrt((redX * redX) + (redY * redY));
 
-                    //ajust the colors to be between 0 and 255
+                    //adjust the colors to be between 0 and 255
                     if (blueTotal > 255)
                     { blueTotal = 255; }
 
@@ -138,8 +138,6 @@ namespace ImageEdgeDetection
             resultbitmap.UnlockBits(resultData);
             //return the result
             return resultbitmap;
-
-
         }
     }
 }

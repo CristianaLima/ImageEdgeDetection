@@ -38,7 +38,6 @@ namespace ImageEdgeDetection
 
                 return allMatrix;
             }
-
         }
     }
 }

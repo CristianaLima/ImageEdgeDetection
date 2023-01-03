@@ -2,6 +2,7 @@
 
 namespace ImageEdgeDetection
 {
+    //Interface for the Image Filters class
     public interface IImageFilters
     {
         Bitmap BlackWhite(Bitmap Bmp);

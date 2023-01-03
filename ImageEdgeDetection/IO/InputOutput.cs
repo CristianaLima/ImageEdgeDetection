@@ -5,15 +5,12 @@ using System.IO;
 
 namespace ImageEdgeDetection.IO
 {
-    /// <summary>
-    /// InputOuput class that provides methods to load and save images
-    /// </summary>
+    
+    // InputOuput class that provides methods to load and save images
     public class InputOutput : IInputOutput
     {
-        /// <summary>
-        /// Lets the user choose a png/jpg/bmp from his windows file system
-        /// </summary>
-        /// <returns>A Bitmap selected by the user</returns>
+        
+        // Lets the user choose a png/jpg/bmp from his windows file system
         public Bitmap LoadImage(String imagePath)
         {
             Bitmap image = null;
@@ -33,10 +30,7 @@ namespace ImageEdgeDetection.IO
             return image;
         }
 
-        /// <summary>
-        /// Lets the user save a png/jpg/bmp on his windows file system
-        /// </summary>
-        /// <param name="image">A Bitmap to be saved by the user</param>
+        // Lets the user save a png/jpg/bmp on his windows file system
         public void SaveImage(Bitmap image, String imagePath)
         {
             if (image == null)

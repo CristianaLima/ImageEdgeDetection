@@ -104,7 +104,7 @@
             this.labelError.TabIndex = 35;
             this.labelError.Text = " ";
             // 
-            // button1
+            // btnMiami
             // 
             this.button1.Location = new System.Drawing.Point(651, 223);
             this.button1.Name = "button1";

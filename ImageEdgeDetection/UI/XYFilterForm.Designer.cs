@@ -152,6 +152,7 @@ namespace ImageEdgeDetection
             this.xFilterBox.Name = "xFilterBox";
             this.xFilterBox.Size = new System.Drawing.Size(137, 24);
             this.xFilterBox.TabIndex = 38;
+            this.xFilterBox.SelectedIndexChanged += new System.EventHandler(this.xFilterBox_SelectedIndexChanged);
             // 
             // yFilterBox
             // 

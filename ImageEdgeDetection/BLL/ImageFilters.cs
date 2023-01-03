@@ -79,7 +79,6 @@ namespace ImageEdgeDetection
                     Color cLayer = Color.FromArgb(c.A / alpha, c.R / red, c.G / green, c.B / blue);
                     temp.SetPixel(i, x, cLayer);
                 }
-
             }
             return temp;
         }

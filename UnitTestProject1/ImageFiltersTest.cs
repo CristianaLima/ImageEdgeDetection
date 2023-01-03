@@ -32,7 +32,7 @@ namespace UnitTestProject1
 
 
 
-        //Test if miami image filter works
+        //Test if the miami image filter works
         [TestMethod]
         public void TestFilterMiami()
         {
@@ -44,8 +44,6 @@ namespace UnitTestProject1
 
             comparatorBitmap.CompareBitmapPixels(imageFilter.MiamiFilter(sourceImage, 1, 1, 10, 1), resultImage);
         }
-
-
 
         //Test if the rainbow image filter works
         [TestMethod]

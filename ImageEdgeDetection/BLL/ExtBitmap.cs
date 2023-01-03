@@ -16,7 +16,7 @@ namespace ImageEdgeDetection
 {
     public static class ExtBitmap
     {
-        //ajust the image
+        //adjust the image
         public static Bitmap CopyToSquareCanvas(this Bitmap sourceBitmap, int canvasWidthLenght)
         {
             float ratio = 1.0f;
@@ -46,9 +46,5 @@ namespace ImageEdgeDetection
 
             return bitmapResult;
         }
-
-      
-
-      
     }  
 }
