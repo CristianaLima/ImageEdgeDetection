@@ -10,32 +10,25 @@ using System.IO;
 
 namespace UnitTestProject1
 {
-    /// <summary>
-    /// InputOutputTest unit test class to test the methods of the InputOutput class
-    /// </summary>
+    
+    // InputOutputTest unit test class to test the methods of the InputOutput class
     [TestClass]
     public class InputOutputTest
     {
-        /// <summary>
-        /// CompareBitmap to compare images
-        /// </summary>
+        
+        // CompareBitmap to compare images
         private CompareBitmap comparatorBitmap = new CompareBitmap();
 
-        /// <summary>
-        /// InputOutput interface that is substituted 
-        /// </summary>
+       
+        // InputOutput interface that is substituted 
         private IAccessData inputOutput = Substitute.For<IAccessData>();
 
-        /// <summary>
-        /// InputOutput class
-        /// </summary>
+        // InputOutput class
         private AccessData inputOutputClass = new AccessData();
 
-        /// <summary>
-        /// Load image test
-        /// </summary>
+        // Load image test
         [TestMethod]
-        public void LoadImageTest()
+        public void LoadingImageTest()
         {
             Bitmap loadedImage = Properties.Resources.barcelona;
 
@@ -48,11 +41,9 @@ namespace UnitTestProject1
             comparatorBitmap.CompareBitmapPixels(inputOutput.LoadImage(imagePath), resultImage);
         }
 
-        /// <summary>
-        /// Load image test with imagePath = null
-        /// </summary>
+        // Load image test with imagePath = null
         [TestMethod]
-        public void LoadImageNullTest()
+        public void LoadingImageNullTest()
         {
             Bitmap loadedImage = null;
 
@@ -65,11 +56,9 @@ namespace UnitTestProject1
             Assert.AreEqual(inputOutput.LoadImage(imagePath), resultImage);
         }
 
-        /// <summary>
-        /// Save image test
-        /// </summary>
+        // Save image test
         [TestMethod]
-        public void SaveImage()
+        public void SaveImageTest()
         {
             Bitmap saveImage = Properties.Resources.barcelona;
 
@@ -99,9 +88,8 @@ namespace UnitTestProject1
             comparatorBitmap.CompareBitmapPixels(substituteImage, resultImage);
         }
 
-        /// <summary>
-        /// Save image test with saveImage = null
-        /// </summary>
+        
+        // Save image test with saveImage = null
         [TestMethod]
         public void SaveImageNullTest()
         {

@@ -11,24 +11,18 @@ namespace UnitTestProject1
     [TestClass]
     public class FilterXYTest
     {
-        /// <summary>
-        /// CompareBitmap to compare images
-        /// </summary>
+        // CompareBitmap to compare images
         private CompareBitmap comparatorBitmap = new CompareBitmap();
 
-        /// <summary>
-        /// EdgeDetection interface that is substituted 
-        /// </summary>
+        // EdgeDetection interface that is substituted 
         private IFilterXY filterXY = Substitute.For<IFilterXY>();
 
-        /// <summary>
-        /// EdgeDetection class
-        /// </summary>
+        
+        // EdgeDetection class
         private FilterXY filterXYClass = new FilterXY();
 
-        /// <summary>
-        /// Bitmap source image
-        /// </summary>
+        
+        // Bitmap source image
         private Bitmap original = Properties.Resources.ImageOriginal;
 
 
