@@ -14,11 +14,12 @@ namespace ImageEdgeDetection.IO
         public Bitmap LoadImage(String imagePath)
         {
             Bitmap image = null;
-            StreamReader streamReader = null;
+            
 
             try
             {
-                streamReader = new StreamReader(imagePath);
+                StreamReader streamReader = new StreamReader(imagePath);
+
                 image = new Bitmap(streamReader.BaseStream);
                 streamReader.Close();
             }
@@ -44,6 +45,7 @@ namespace ImageEdgeDetection.IO
                 ImageFormat imgFormat = ImageFormat.Png;
 
                 StreamWriter streamWriter = new StreamWriter(imagePath, false);
+
                 image.Save(streamWriter.BaseStream, imgFormat);
                 streamWriter.Flush();
                 streamWriter.Close();

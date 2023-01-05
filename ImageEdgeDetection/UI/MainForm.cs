@@ -20,19 +20,14 @@ namespace ImageEdgeDetection
 {
     public partial class MainForm : Form
     {
-        /// <summary>
-        /// ImageFilter interface
-        /// </summary>
+        
+        // ImageFilter interface
         private IImageFilters imageFilter = new ImageFilters();
 
-        /// <summary>
-        /// DataAccess interface from BLL
-        /// </summary>
+        // DataAccess interface from BLL
         private IAccessData dataAccess = new AccessData();
 
-        /// <summary>
-        /// Image in the picture box without any filter applied
-        /// </summary>
+        // Image in the picture box without any filter applied
         private Image origin;
 
         //result that XYFilterForm will pick
@@ -50,20 +45,20 @@ namespace ImageEdgeDetection
             labelError.Text = " ";
             //open your files to go pick an image
             OpenFileDialog ofd = new OpenFileDialog();
+
             ofd.Title = "Select an image file.";
             ofd.Filter = "Png Images(*.png)|*.png|Jpeg Images(*.jpg)|*.jpg";
             ofd.Filter += "|Bitmap Images(*.bmp)|*.bmp";
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                StreamReader streamReader = new StreamReader(ofd.FileName);
-                Bitmap originalBitmap = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
-                streamReader.Close();
+
+                origin = dataAccess.LoadImage(ofd.FileName);
+
 
                 //show the image
-                resultBitmap = originalBitmap.CopyToSquareCanvas(picPreview.Width);
-                origin = originalBitmap.CopyToSquareCanvas(picPreview.Width);
-                picPreview.Image = resultBitmap;
+                resultBitmap = (Bitmap)origin;
+                picPreview.Image = origin;
                               
             }
         }
@@ -71,6 +66,7 @@ namespace ImageEdgeDetection
         //when you click to the next page button
         private void btnNextPage_Click(object sender, EventArgs e)
         {
+            picPreview.Image = origin;
             //see if you load an image or not
             if (resultBitmap != null)
             {
@@ -122,7 +118,7 @@ namespace ImageEdgeDetection
 
         }
 
-        private void picPreview_Click(object sender, EventArgs e)
+       private void picPreview_Click(object sender, EventArgs e)
         {
 
         }

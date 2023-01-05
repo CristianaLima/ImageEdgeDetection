@@ -61,11 +61,7 @@ namespace ImageEdgeDetection
                     imgFormat = ImageFormat.Jpeg;
                 }
 
-                StreamWriter streamWriter = new StreamWriter(sfd.FileName, false);
-                resultBitmap.Save(streamWriter.BaseStream, imgFormat);
-                streamWriter.Flush();
-                streamWriter.Close();
-
+                dataAccess.SaveImage(resultBitmap, sfd.FileName);
             }
         }
 

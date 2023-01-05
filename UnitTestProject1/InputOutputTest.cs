@@ -65,8 +65,6 @@ namespace UnitTestProject1
             String imagePathSubstitute = @"..\..\Resources\saveImageTestSubstitute.png";
             String imagePath = @"..\..\Resources\saveImageTest.png";
 
-            // https://nsubstitute.github.io/help/callbacks/
-            // https://nsubstitute.github.io/help/return-from-function/
             inputOutput.When(
                 call => call.SaveImage(saveImage, imagePathSubstitute)
             ).Do(
@@ -98,7 +96,6 @@ namespace UnitTestProject1
             String imagePathSubstitute = @"..\..\Resources\saveImageTestSubstitute.png";
             String imagePath = @"..\..\Resources\saveImageTest.png";
 
-            // https://nsubstitute.github.io/help/throwing-exceptions/
             inputOutput.When(
                 call => call.SaveImage(saveImage, imagePathSubstitute)
             ).Do(
