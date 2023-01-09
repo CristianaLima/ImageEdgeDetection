@@ -16,13 +16,11 @@ namespace ImageEdgeDetection
 {
     public partial class XYFilterForm : Form
     {
-        /// <summary>
-        /// EdgeDetection interface
-        /// </summary>
+        
+        // EdgeDetection interface
         private IFilterXY filterXY = new FilterXY();
 
-        /// DataAccess interface from BLL
-        /// </summary>
+        // DataAccess interface from BLL
         private IAccessData dataAccess = new AccessData();
 
         //result that XYFilterForm will pick
@@ -83,16 +81,6 @@ namespace ImageEdgeDetection
                 //show an error message
                 labelError.Text = "2 filters must be selected";
             }
-        }
-
-        private void xFilterBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void originalPicBox_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

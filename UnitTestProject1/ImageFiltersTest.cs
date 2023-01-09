@@ -9,10 +9,7 @@ using UnitTestProject1.Properties;
 namespace UnitTestProject1
 {
 
-    /// <summary>
-    /// FiltersTest unit test class to test the methods of the Filters class
-    /// </summary>
-    /// 
+    // FiltersTest unit test class to test the methods of the Filters class 
     [TestClass]
     public class ImageFiltersTest
     {
@@ -36,7 +33,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestFilterMiami()
         {
-            Bitmap filteredMiamiImage = Properties.Resources.barcelona;
+            Bitmap filteredMiamiImage = Properties.Resources.barcelona_miami;
 
             imageFilter.MiamiFilter(sourceImage, 1, 1, 10, 1).Returns(filteredMiamiImage);
 

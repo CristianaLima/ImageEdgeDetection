@@ -117,11 +117,6 @@ namespace ImageEdgeDetection
             resultBitmap = bitmapImage;
 
         }
-
-       private void picPreview_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

@@ -50,7 +50,6 @@
             this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPreview.TabIndex = 13;
             this.picPreview.TabStop = false;
-            this.picPreview.Click += new System.EventHandler(this.picPreview_Click);
             // 
             // btnOpenOriginal
             // 

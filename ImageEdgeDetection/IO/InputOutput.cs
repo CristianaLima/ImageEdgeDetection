@@ -11,7 +11,7 @@ namespace ImageEdgeDetection.IO
     {
         
         // Lets the user choose a png/jpg/bmp from his windows file system
-        public Bitmap LoadImage(String imagePath)
+        public Bitmap LoadImage(string imagePath)
         {
             Bitmap image = null;
             
@@ -32,7 +32,7 @@ namespace ImageEdgeDetection.IO
         }
 
         // Lets the user save a png/jpg/bmp on his windows file system
-        public void SaveImage(Bitmap image, String imagePath)
+        public void SaveImage(Bitmap image, string imagePath)
         {
             if (image == null)
             {

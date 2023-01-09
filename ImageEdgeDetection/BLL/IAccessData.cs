@@ -7,10 +7,10 @@ namespace ImageEdgeDetection.BLL
     public interface IAccessData
     {
         // Lets the user choose a png/jpg/bmp from his windows file system
-        Bitmap LoadImage(String imagePath);
+        Bitmap LoadImage(string imagePath);
 
         
         // Lets the user save a png/jpg/bmp on his windows file system
-        void SaveImage(Bitmap image, String imagePath);
+        void SaveImage(Bitmap image, string imagePath);
     }
 }
